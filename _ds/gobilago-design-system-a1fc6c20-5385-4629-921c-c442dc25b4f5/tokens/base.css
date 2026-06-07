@@ -1,0 +1,90 @@
+/* ============================================================
+   Gobilago — Base layer
+   Light reset + element defaults + brand background utilities.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0; }
+a { color: var(--text-link); text-decoration: none; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+::selection { background: color-mix(in oklch, var(--color-primary) 26%, transparent); }
+
+/* ---- Overline (e.g. TODAY'S PLAN) ------------------------- */
+.gb-overline {
+  font-family: var(--role-overline-font);
+  font-weight: var(--role-overline-weight);
+  letter-spacing: var(--role-overline-spacing);
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* ---- Mono data ------------------------------------------- */
+.gb-mono { font-family: var(--font-mono); }
+
+/* ============================================================
+   Brand background motifs
+   ============================================================ */
+
+/* Aurora mesh — the signature multi-hue gradient surface */
+.gb-aurora {
+  background-color: var(--aurora-indigo);
+  background-image:
+    radial-gradient(60% 90% at 12% 18%, var(--aurora-violet) 0%, transparent 60%),
+    radial-gradient(70% 80% at 88% 12%, var(--aurora-mint) 0%, transparent 58%),
+    radial-gradient(80% 90% at 78% 92%, var(--aurora-teal) 0%, transparent 60%),
+    radial-gradient(90% 90% at 20% 95%, var(--aurora-blue) 0%, transparent 62%),
+    linear-gradient(120deg, var(--aurora-indigo), var(--aurora-blue));
+}
+
+/* Confetti — scattered memory particles (a celebratory texture) */
+.gb-confetti {
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle, var(--confetti-violet) 99%, transparent 0) 4% 12% / 220px 220px,
+    radial-gradient(circle, var(--confetti-teal)   99%, transparent 0) 62% 28% / 260px 260px,
+    radial-gradient(circle, var(--confetti-blue)   99%, transparent 0) 30% 64% / 240px 240px,
+    radial-gradient(circle, var(--confetti-green)  99%, transparent 0) 84% 72% / 280px 280px,
+    radial-gradient(circle, var(--confetti-indigo) 99%, transparent 0) 50% 90% / 300px 300px;
+  background-repeat: repeat;
+  /* dots are tiny because the gradient circle is 99% transparent past ~3px */
+}
+
+/* Card primitive shorthand */
+.gb-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid color-mix(in oklch, var(--border-color) 60%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

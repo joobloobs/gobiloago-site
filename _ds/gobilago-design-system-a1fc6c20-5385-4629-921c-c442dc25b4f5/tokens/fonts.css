@@ -1,0 +1,14 @@
+/* ============================================================
+   Gobilago — Webfonts
+   ------------------------------------------------------------
+   The Gobilago iOS app uses SF Pro (system). For the WEB brand
+   we substitute open fonts with a similar character: a bold,
+   confident grotesque for display, a warm/legible grotesque for
+   body/UI, and a mono for data + interval labels.
+
+   ⚠ SUBSTITUTION: these are Google Fonts stand-ins for a future
+   bespoke "Gobilago Display" typeface. Swap the @font-face / link
+   below if real font files are provided.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:ital,wght@0,300..800;1,400..600&family=Space+Mono:wght@400;700&display=swap');

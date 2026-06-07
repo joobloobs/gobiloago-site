@@ -1,0 +1,125 @@
+/* ============================================================
+   Gobilago — Color tokens
+   ------------------------------------------------------------
+   Derived from the iOS app, anchored on the "Long Term Memory"
+   screen. Primary = systemIndigo #5E5CE6.
+   Two themes: light (default) and [data-theme="dark"] (pure black).
+   ============================================================ */
+
+:root {
+  /* ---- Brand / primary -------------------------------------- */
+  --indigo-50:  #EEEEFD;
+  --indigo-100: #DEDDFB;
+  --indigo-200: #BFBDF6;
+  --indigo-300: #9F9CF1;
+  --indigo-400: #807CEC;
+  --indigo-500: #5E5CE6;   /* PRIMARY — systemIndigo */
+  --indigo-600: #4B49D6;
+  --indigo-700: #3A38B0;
+  --indigo-800: #2B2A85;
+  --indigo-900: #1E1D5C;
+
+  /* ---- Aurora gradient stops (hero / feature surfaces) ------ */
+  --aurora-violet: #8E7CF0;
+  --aurora-indigo: #5E5CE6;
+  --aurora-blue:   #5AA9F5;
+  --aurora-teal:   #4FD2C2;
+  --aurora-mint:   #8BE3B8;
+
+  /* ---- Confetti / particle palette -------------------------- */
+  --confetti-blue:   #4A90D9;
+  --confetti-teal:   #2BB3A3;
+  --confetti-green:  #46C37B;
+  --confetti-violet: #8E7CF0;
+  --confetti-indigo: #5E5CE6;
+
+  /* ---- Atom / collection swatches (iOS system colors) ------- */
+  --atom-red:    #E6342A;
+  --atom-orange: #F5950B;
+  --atom-amber:  #F5A623;
+  --atom-green:  #34C759;
+  --atom-leaf:   #5CB85C;
+  --atom-teal:   #30C0B4;
+  --atom-blue:   #2F80ED;
+  --atom-indigo: #5E5CE6;
+  --atom-violet: #8E7CF0;
+  --atom-olive:  #9A7B12;
+
+  /* ---- Semantic / status ------------------------------------ */
+  --success:     #34C759;
+  --success-soft:#B8E6CC;
+  --warning:     #F5A623;
+  --danger:      #FF3B30;   /* overdue red on Long Term Memory */
+  --danger-soft: #FFD9D6;
+  --info:        #0A84FF;
+
+  /* ---- Neutrals (light theme) ------------------------------- */
+  --ink-900: #14152B;       /* headings — near-black indigo navy */
+  --ink-800: #1C1C2E;
+  --ink-700: #3A3A48;
+  --ink-600: #55555F;       /* body text */
+  --ink-500: #75757E;
+  --ink-400: #9A9AA2;       /* tertiary / placeholder */
+  --ink-300: #C2C2C9;
+
+  --paper:        #FFFFFF;  /* page background */
+  --surface:      #FFFFFF;  /* card surface */
+  --surface-sunk: #F2F2F7;  /* grouped/sunk background (systemGray6) */
+  --surface-warm: #F6F2F1;  /* warm tinted detail background */
+  --line:         #E6E6EC;  /* hairline divider */
+  --line-strong:  #D6D6DE;
+
+  /* ---- Semantic aliases (use these in components) ----------- */
+  --color-primary:        var(--indigo-500);
+  --color-primary-hover:  var(--indigo-600);
+  --color-primary-press:  var(--indigo-700);
+  --color-on-primary:     #FFFFFF;
+  --color-primary-soft:   var(--indigo-50);
+
+  --text-strong:   var(--ink-900);
+  --text-body:     var(--ink-600);
+  --text-muted:    var(--ink-400);
+  --text-on-color: #FFFFFF;
+  --text-link:     var(--indigo-500);
+
+  --bg-page:       var(--paper);
+  --bg-sunk:       var(--surface-sunk);
+  --surface-card:  var(--surface);
+  --surface-input: var(--surface-sunk);
+  --border-color:  var(--line);
+
+  --focus-ring:    color-mix(in oklch, var(--indigo-500) 45%, transparent);
+}
+
+/* ============================================================
+   Dark theme — pure black, the app's true OLED dark mode
+   ============================================================ */
+[data-theme="dark"] {
+  --indigo-500: #6E6CF0;    /* lifted for contrast on black */
+  --indigo-400: #8A88F4;
+
+  --ink-900: #FFFFFF;
+  --ink-800: #F2F2F5;
+  --ink-700: #D8D8DE;
+  --ink-600: #B4B4BD;       /* body text */
+  --ink-500: #98989F;
+  --ink-400: #7C7C84;       /* tertiary */
+  --ink-300: #5A5A62;
+
+  --paper:        #000000;
+  --surface:      #141416;  /* card surface on black */
+  --surface-sunk: #1C1C1E;
+  --surface-warm: #161514;
+  --line:         #2A2A2E;
+  --line-strong:  #3A3A40;
+
+  --color-primary:       var(--indigo-500);
+  --color-primary-hover: #8A88F4;
+  --color-primary-press: #5957D4;
+  --color-primary-soft:  rgba(110,108,240,0.16);
+
+  --danger-soft: rgba(255,59,48,0.18);
+  --success-soft: rgba(52,199,89,0.20);
+
+  --focus-ring:  color-mix(in oklch, var(--indigo-500) 55%, transparent);
+}

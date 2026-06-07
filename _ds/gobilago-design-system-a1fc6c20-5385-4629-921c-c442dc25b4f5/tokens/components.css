@@ -1,0 +1,109 @@
+/* ============================================================
+   Gobilago — Component classes
+   Ships the .gb-* component styling so consumers get it from CSS
+   alone. (The bundled React components also inject identical rules
+   at runtime; duplicates are harmless.)
+   ============================================================ */
+
+/* ---- Button ----------------------------------------------- */
+.gb-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+  font-family:var(--font-body); font-weight:600; line-height:1;
+  border:1px solid transparent; border-radius:var(--radius-pill);
+  cursor:pointer; white-space:nowrap; text-decoration:none;
+  background:var(--color-primary); color:var(--color-on-primary);
+  transition:transform var(--dur-fast) var(--ease-out),
+             background var(--dur-fast) var(--ease-out),
+             box-shadow var(--dur-base) var(--ease-out), opacity var(--dur-fast), filter var(--dur-fast);
+}
+.gb-btn:active{ transform:scale(.97); }
+.gb-btn:focus-visible{ outline:none; box-shadow:0 0 0 4px var(--focus-ring); }
+.gb-btn[disabled]{ opacity:.45; cursor:not-allowed; transform:none; }
+.gb-btn--sm{ font-size:var(--text-sm); padding:.5rem .95rem; }
+.gb-btn--md{ font-size:var(--text-base); padding:.7rem 1.35rem; }
+.gb-btn--lg{ font-size:var(--text-md); padding:.95rem 1.9rem; }
+.gb-btn--primary{ background:var(--color-primary); color:var(--color-on-primary); box-shadow:var(--shadow-indigo); }
+.gb-btn--primary:hover:not([disabled]){ background:var(--color-primary-hover); }
+.gb-btn--primary:active:not([disabled]){ background:var(--color-primary-press); }
+.gb-btn--secondary{ background:var(--surface-sunk); color:var(--text-strong); }
+.gb-btn--secondary:hover:not([disabled]){ background:color-mix(in oklch, var(--surface-sunk) 78%, var(--ink-900)); }
+.gb-btn--ghost{ background:transparent; color:var(--color-primary); }
+.gb-btn--ghost:hover:not([disabled]){ background:var(--color-primary-soft); }
+.gb-btn--danger{ background:var(--danger); color:#fff; }
+.gb-btn--danger:hover:not([disabled]){ filter:brightness(.93); }
+.gb-btn--block{ display:flex; width:100%; }
+.gb-btn__icon{ display:inline-flex; }
+.gb-btn__icon svg{ width:1.15em; height:1.15em; stroke-width:2.2; }
+
+/* ---- Tag -------------------------------------------------- */
+.gb-tag{
+  display:inline-flex; align-items:center; gap:.4em;
+  font-family:var(--font-body); font-weight:700; font-size:var(--text-xs);
+  line-height:1; padding:.45em .7em; border-radius:var(--radius-xs);
+  background:var(--color-primary-soft); color:var(--color-primary);
+}
+.gb-tag--neutral{ background:var(--surface-sunk); color:var(--text-body); }
+.gb-tag--solid{ background:var(--color-primary); color:#fff; }
+.gb-tag svg{ width:1em; height:1em; stroke-width:2.4; }
+
+/* ---- Badge ------------------------------------------------ */
+.gb-badge{ display:inline-flex; align-items:center; gap:.45em; font-family:var(--font-body); font-weight:600; font-size:var(--text-sm); line-height:1; color:var(--text-body); }
+.gb-badge__dot{ width:.62em; height:.62em; border-radius:50%; background:currentColor; flex:none; }
+.gb-badge--overdue{ color:var(--danger); }
+.gb-badge--due{ color:var(--color-primary); }
+.gb-badge--upcoming{ color:var(--success); }
+.gb-badge--dormant{ color:var(--text-muted); }
+.gb-badge__count{ display:inline-flex; align-items:center; justify-content:center; min-width:1.5em; height:1.5em; padding:0 .45em; border-radius:var(--radius-pill); background:var(--color-primary); color:#fff; font-family:var(--font-mono); font-weight:700; font-size:var(--text-xs); }
+
+/* ---- StatPill --------------------------------------------- */
+.gb-statpill{ display:inline-flex; align-items:center; gap:.4em; font-family:var(--font-mono); font-weight:700; font-size:var(--text-sm); line-height:1; padding:.5em .85em; border-radius:var(--radius-pill); background:var(--color-primary-soft); color:var(--color-primary); }
+.gb-statpill--ghost{ background:var(--surface-sunk); color:var(--text-body); }
+.gb-statpill--solid{ background:var(--color-primary); color:#fff; }
+
+/* ---- Card ------------------------------------------------- */
+.gb-card{ background:var(--surface-card); border-radius:var(--radius-xl); border:1px solid color-mix(in oklch, var(--border-color) 60%, transparent); box-shadow:var(--shadow-md); }
+.gb-card--flat{ box-shadow:none; }
+.gb-card--sunk{ background:var(--surface-sunk); border-color:transparent; box-shadow:none; }
+.gb-card--pad-sm{ padding:var(--space-4); }
+.gb-card--pad-md{ padding:var(--space-6); }
+.gb-card--pad-lg{ padding:var(--space-8); }
+.gb-card--interactive{ cursor:pointer; transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+.gb-card--interactive:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.gb-card--interactive:active{ transform:translateY(0) scale(.99); }
+
+/* ---- Toggle ----------------------------------------------- */
+.gb-toggle{ display:inline-flex; align-items:center; border:none; padding:0; cursor:pointer; width:52px; height:31px; border-radius:var(--radius-pill); background:var(--line-strong); transition:background var(--dur-base) var(--ease-out); }
+.gb-toggle[aria-checked="true"]{ background:var(--color-primary); }
+.gb-toggle[disabled]{ opacity:.5; cursor:not-allowed; }
+.gb-toggle__knob{ width:27px; height:27px; margin:2px; border-radius:50%; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,.25); transition:transform var(--dur-base) var(--ease-spring); }
+.gb-toggle[aria-checked="true"] .gb-toggle__knob{ transform:translateX(21px); }
+.gb-toggle:focus-visible{ outline:none; box-shadow:0 0 0 4px var(--focus-ring); }
+
+/* ---- AtomTile --------------------------------------------- */
+.gb-atom{ display:flex; flex-direction:column; justify-content:space-between; aspect-ratio:1.1; border-radius:var(--radius-lg); padding:var(--space-4); color:#fff; box-shadow:var(--shadow-sm); border:none; text-align:left; background:var(--_atom, var(--atom-indigo)); cursor:default; transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+.gb-atom--interactive{ cursor:pointer; }
+.gb-atom--interactive:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.gb-atom--interactive:active{ transform:translateY(0) scale(.99); }
+.gb-atom__chip{ width:36px; height:36px; border-radius:11px; background:rgba(255,255,255,.22); display:flex; align-items:center; justify-content:center; color:#fff; }
+.gb-atom__chip svg{ width:20px; height:20px; stroke-width:2.2; }
+.gb-atom__title{ font-family:var(--font-body); font-weight:700; font-size:var(--text-base); line-height:1.2; }
+.gb-atom__meta{ font-size:var(--text-sm); color:rgba(255,255,255,.82); margin-top:2px; }
+
+/* ---- AuroraPanel ------------------------------------------ */
+.gb-aurora-panel{ position:relative; overflow:hidden; color:#fff; border-radius:var(--radius-2xl); padding:var(--space-8);
+  background-color:var(--aurora-indigo);
+  background-image:
+    radial-gradient(60% 90% at 12% 18%, var(--aurora-violet) 0%, transparent 60%),
+    radial-gradient(70% 80% at 88% 12%, var(--aurora-mint) 0%, transparent 58%),
+    radial-gradient(80% 90% at 78% 92%, var(--aurora-teal) 0%, transparent 60%),
+    radial-gradient(90% 90% at 20% 95%, var(--aurora-blue) 0%, transparent 62%),
+    linear-gradient(120deg, var(--aurora-indigo), var(--aurora-blue)); }
+.gb-aurora-panel--glow{ box-shadow:var(--shadow-indigo); }
+.gb-aurora-panel--confetti::before{ content:""; position:absolute; inset:0; opacity:.5; pointer-events:none;
+  background-image:
+    radial-gradient(circle, var(--confetti-violet) 99%, transparent 0) 4% 12% / 200px 200px,
+    radial-gradient(circle, var(--aurora-mint) 99%, transparent 0) 62% 28% / 240px 240px,
+    radial-gradient(circle, #fff 99%, transparent 0) 30% 64% / 220px 220px,
+    radial-gradient(circle, var(--confetti-teal) 99%, transparent 0) 84% 72% / 260px 260px;
+  background-repeat:repeat; }
+.gb-aurora-panel > *{ position:relative; }

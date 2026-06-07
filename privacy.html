@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-warm="on" data-accent="indigo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Gobilago</title>
+<meta name="description" content="How Gobilago handles your data. Short version: it stays on your device unless you choose to sync or share.">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/colors.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/typography.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/base.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/components.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/styles.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/_ds_bundle.js"></script>
+<script type="text/babel" src="js/legal.jsx"></script>
+<script type="text/babel">
+  const { LegalPage, P, UL, Callout, h } = window.LegalKit;
+  const DOC = {
+    title: "Privacy Policy",
+    updated: "June 6, 2026",
+    intro: "Gobilago is built offline-first, and privacy is part of that design \u2014 not an afterthought. The short version: your learning data lives on your device. It only leaves it if you choose to turn on cloud sync or publish to the community library. This policy explains what that means in practice.",
+    sections: [
+      { id: "summary", title: "The short version", body: h("div", null,
+        UL([
+          "Your collections and study history are stored locally on your device by default.",
+          "We don\u2019t sell your data, and we don\u2019t use it to build advertising profiles.",
+          "Cloud sync is optional. When it\u2019s on, your data is sent to our sync provider so you can back up and restore it.",
+          "Publishing to the community library is a deliberate, opt-in action that makes that specific content public."
+        ]),
+        Callout("You can use Gobilago fully offline, with no account and no data ever leaving your device.")) },
+      { id: "what-we-collect", title: "What we collect", body: h("div", null,
+        P(h("strong", null, "Data you create. "), "Your collections, notions, aspects, cards, templates, and study/scheduling progress. By default this is stored only on your device."),
+        P(h("strong", null, "Account data (optional). "), "If you create an account for sync or the community library, we process the information needed to run it \u2014 such as an email address and authentication tokens."),
+        P(h("strong", null, "Diagnostic & usage data. "), "We may collect limited, aggregated information about crashes and how features are used, to fix bugs and improve the App. Where required, this is anonymised or tied to a random identifier rather than your identity."),
+        P(h("strong", null, "What we don\u2019t collect. "), "Gobilago does not request access to your contacts, photos, location, microphone, or camera in order to function.")) },
+      { id: "how-we-use", title: "How we use your data", body: h("div", null,
+        P("We use the limited data we process to:"),
+        UL([
+          "provide the App\u2019s core features \u2014 storing your knowledge and scheduling your reviews;",
+          "back up and synchronise your data across sessions when you enable cloud sync;",
+          "operate the community library so you can publish, browse, and download collections;",
+          "diagnose crashes, prevent abuse, and improve performance and features."
+        ]),
+        P("We do not sell your personal data, and we do not use the content of your collections to target advertising.")) },
+      { id: "sync", title: "Cloud sync & where data is stored", body: h("div", null,
+        P("When you enable sync, your data is transmitted over an encrypted connection and stored with our cloud infrastructure provider (Supabase) so it can be backed up and restored. Sync runs in the background and is designed never to block the App\u2019s interface."),
+        P("On-device data is stored in the App\u2019s local database and fast key-value storage. Some settings and state are cached locally for performance. Deleting the App removes its local data from your device.")) },
+      { id: "community", title: "The community library", body: h("div", null,
+        P("Publishing a collection or template is always something you choose to do. When you publish, the content of that collection \u2014 and a public author name you set \u2014 becomes visible to other Gobilago users, who can download it."),
+        P("Please don\u2019t include private or sensitive personal information in anything you publish. You can request removal of content you\u2019ve published by contacting us, though copies already downloaded by others may persist on their devices.")) },
+      { id: "sharing", title: "Who we share data with", body: h("div", null,
+        P("We share data only with service providers who help us run Gobilago \u2014 for example, our cloud sync provider and Apple (for App distribution and payments) \u2014 and only as needed to provide the service. These providers are bound to protect your data."),
+        P("We may disclose information if required by law, or to protect the rights, safety, and security of our users and Gobilago.")) },
+      { id: "retention", title: "Data retention & deletion", body: h("div", null,
+        P("Local data remains on your device until you delete it or remove the App. If you use sync, your synced data is retained while your account is active."),
+        P("You can request deletion of your account and associated synced data at any time by emailing us. We\u2019ll action it within a reasonable period, except where we\u2019re required to retain certain records by law.")) },
+      { id: "your-rights", title: "Your rights", body: h("div", null,
+        P("Depending on where you live, you may have rights to access, correct, export, or delete the personal data we hold about you, and to object to or restrict certain processing. Because most of your data lives on your own device, you already control much of it directly."),
+        P("To exercise any right relating to account or synced data, just contact us \u2014 we\u2019ll help.")) },
+      { id: "children", title: "Children\u2019s privacy", body: h("div", null,
+        P("Gobilago is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has provided us with personal data, please contact us and we will delete it.")) },
+      { id: "changes", title: "Changes to this policy", body: h("div", null,
+        P("We may update this policy as Gobilago evolves \u2014 for instance, when multi-device sync or new features ship. We\u2019ll revise the \u201clast updated\u201d date above and, for material changes, give notice in the App where appropriate.")) },
+      { id: "contact", title: "Contact", body: h("div", null,
+        P("Questions, requests, or concerns about your privacy? Write to us \u2014 a real person will read it."),
+        P(h("strong", null, "Email: "), h("a", { href: "mailto:privacy@gobilago.com", style: { color: "var(--color-primary)" } }, "privacy@gobilago.com"))) },
+    ],
+  };
+  ReactDOM.createRoot(document.getElementById("root")).render(h(LegalPage, { doc: DOC }));
+  setTimeout(() => window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

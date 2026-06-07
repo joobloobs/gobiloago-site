@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-warm="on" data-accent="indigo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — Gobilago</title>
+<meta name="description" content="The terms that govern your use of the Gobilago app and website.">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/colors.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/typography.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/base.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/tokens/components.css">
+<link rel="stylesheet" href="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/styles.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="_ds/gobilago-design-system-a1fc6c20-5385-4629-921c-c442dc25b4f5/_ds_bundle.js"></script>
+<script type="text/babel" src="js/legal.jsx"></script>
+<script type="text/babel">
+  const { LegalPage, P, UL, Callout, h } = window.LegalKit;
+  const DOC = {
+    title: "Terms of Use",
+    updated: "June 6, 2026",
+    intro: "Thanks for using Gobilago. These terms are a plain-language agreement between you and Gobilago about how the app and this website may be used. We've kept them as short and readable as we reasonably can — by using Gobilago, you agree to them.",
+    sections: [
+      { id: "acceptance", title: "Acceptance of these terms", body: h("div", null,
+        P("By downloading, accessing, or using the Gobilago application (the \u201cApp\u201d) or this website, you confirm that you have read, understood, and agreed to be bound by these Terms of Use and our Privacy Policy. If you do not agree, please do not use Gobilago."),
+        P("If you are using Gobilago on behalf of an organisation, you represent that you have authority to bind that organisation to these terms.")) },
+      { id: "eligibility", title: "Who can use Gobilago", body: h("div", null,
+        P("You must be at least 13 years old (or the minimum age of digital consent in your country) to use Gobilago. If you are under the age of majority where you live, you should review these terms with a parent or guardian."),
+        P("Gobilago is currently distributed exclusively through the Apple App Store for iPhone and iPad. Your use of the App is also subject to Apple\u2019s applicable terms and usage rules.")) },
+      { id: "license", title: "Your licence to use the app", body: h("div", null,
+        P("Subject to these terms, Gobilago grants you a personal, non-exclusive, non-transferable, revocable licence to install and use the App on Apple devices that you own or control, for your own learning."),
+        P("You agree not to:"),
+        UL([
+          "copy, modify, reverse-engineer, decompile, or attempt to extract the source code of the App, except to the limited extent permitted by law;",
+          "rent, lease, sell, sublicense, or otherwise commercially redistribute the App;",
+          "use the App to build a competing product, or to scrape or harvest content from the community library at scale;",
+          "circumvent, disable, or interfere with security-related features, usage limits, or any paid-feature gating."
+        ])) },
+      { id: "accounts", title: "Offline use, accounts & device lock", body: h("div", null,
+        P("Gobilago is offline-first: you can create collections, study, and store your knowledge entirely on your device without an account. Optional cloud sync, backup, and the community library may require you to create an account or sign in."),
+        P("To keep your data consistent, Gobilago currently uses a single-device lock for synced data. You are responsible for keeping your device and any account credentials secure, and for all activity that occurs through them."),
+        Callout("Multi-device conflict resolution is on our roadmap. Until it ships, syncing the same account across several devices simultaneously may be restricted to protect your data.")) },
+      { id: "content", title: "Your content & the community library", body: h("div", null,
+        P("\u201cYour Content\u201d means the collections, notions, aspects, cards, templates, and other material you create or import into Gobilago. You keep all ownership rights in Your Content."),
+        P("When you publish a collection or template to the community library, you grant Gobilago and other users a worldwide, non-exclusive, royalty-free licence to store, reproduce, display, download, and use that published content within Gobilago for the purpose of learning and sharing. Published snapshots are versioned, so an update you make will not automatically overwrite a copy someone has already downloaded."),
+        P("You are responsible for Your Content. You agree only to publish material that you have the right to share, and not to upload content that is unlawful, infringing, hateful, or otherwise objectionable. We may remove published content that violates these terms.")) },
+      { id: "purchases", title: "Purchases & subscriptions", body: h("div", null,
+        P("Gobilago is free to start. Some features may, now or in the future, require a one-time purchase or a recurring subscription (\u201cPremium\u201d). Prices and what\u2019s included will be shown to you before you buy."),
+        P("All payments are processed by Apple through your App Store account. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period, and you can manage or cancel them in your Apple account settings. Except where required by law or Apple\u2019s policies, payments are non-refundable.")) },
+      { id: "ip", title: "Gobilago\u2019s intellectual property", body: h("div", null,
+        P("The App, the website, and everything in them other than Your Content and user-published content \u2014 including the name \u201cGobilago,\u201d the logo, design, text, graphics, and software \u2014 are owned by Gobilago or its licensors and are protected by intellectual-property laws. These terms do not grant you any right to use Gobilago\u2019s branding without our prior written permission.")) },
+      { id: "disclaimer", title: "Disclaimers", body: h("div", null,
+        P("Gobilago is a learning tool. We work hard to make spaced repetition effective, but we do not guarantee any particular learning outcome, exam result, or retention level \u2014 results depend on you."),
+        P("The App and website are provided \u201cas is\u201d and \u201cas available,\u201d without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement, to the fullest extent permitted by law.")) },
+      { id: "liability", title: "Limitation of liability", body: h("div", null,
+        P("To the maximum extent permitted by law, Gobilago and its maker will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data, profits, or goodwill, arising from your use of (or inability to use) Gobilago."),
+        P("You are responsible for keeping your own backups of important data. Where liability cannot be excluded, it is limited to the amount you paid for Gobilago in the twelve months before the claim, or USD 50, whichever is greater.")) },
+      { id: "changes", title: "Changes & termination", body: h("div", null,
+        P("We may update these terms from time to time. If we make material changes, we\u2019ll update the \u201clast updated\u201d date above and, where appropriate, notify you in the App. Continuing to use Gobilago after changes take effect means you accept the revised terms."),
+        P("You may stop using Gobilago at any time by deleting the App. We may suspend or end your access if you materially breach these terms.")) },
+      { id: "contact", title: "Contact", body: h("div", null,
+        P("Questions about these terms? Reach out any time \u2014 there\u2019s a real person on the other end."),
+        P(h("strong", null, "Email: "), h("a", { href: "mailto:hello@gobilago.com", style: { color: "var(--color-primary)" } }, "hello@gobilago.com"))) },
+    ],
+  };
+  ReactDOM.createRoot(document.getElementById("root")).render(h(LegalPage, { doc: DOC }));
+  setTimeout(() => window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

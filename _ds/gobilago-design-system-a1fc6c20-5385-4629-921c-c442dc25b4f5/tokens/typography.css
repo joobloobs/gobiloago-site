@@ -1,0 +1,66 @@
+/* ============================================================
+   Gobilago — Typography tokens
+   Display: Bricolage Grotesque (bold, confident headlines)
+   Body/UI: Hanken Grotesk (warm, legible)
+   Mono:    Space Mono (data, SRS intervals, code)
+   ============================================================ */
+
+:root {
+  /* ---- Families --------------------------------------------- */
+  --font-display: "Bricolage Grotesque", "SF Pro Display", system-ui, sans-serif;
+  --font-body:    "Hanken Grotesk", "SF Pro Text", system-ui, -apple-system, sans-serif;
+  --font-mono:    "Space Mono", "SF Mono", ui-monospace, monospace;
+
+  /* ---- Weights ---------------------------------------------- */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extra:    800;
+
+  /* ---- Type scale (rem, 16px base) -------------------------- */
+  --text-xs:   0.75rem;   /* 12 — captions / overline */
+  --text-sm:   0.875rem;  /* 14 — meta, labels */
+  --text-base: 1rem;      /* 16 — body */
+  --text-md:   1.125rem;  /* 18 — lead body */
+  --text-lg:   1.375rem;  /* 22 — card titles */
+  --text-xl:   1.75rem;   /* 28 — section subheads */
+  --text-2xl:  2.25rem;   /* 36 — section heads */
+  --text-3xl:  3rem;      /* 48 — page titles */
+  --text-4xl:  4rem;      /* 64 — hero */
+  --text-5xl:  5.5rem;    /* 88 — display hero */
+
+  /* ---- Line heights ----------------------------------------- */
+  --leading-tight:   1.04;
+  --leading-snug:    1.18;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Letter spacing --------------------------------------- */
+  --tracking-tight:   -0.03em;   /* large display */
+  --tracking-snug:    -0.015em;  /* headings */
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-overline:0.14em;    /* TODAY'S PLAN style overlines */
+
+  /* ---- Semantic roles --------------------------------------- */
+  --role-hero-font:    var(--font-display);
+  --role-hero-weight:  var(--weight-extra);
+  --role-hero-tracking:var(--tracking-tight);
+
+  --role-heading-font:   var(--font-display);
+  --role-heading-weight: var(--weight-bold);
+
+  --role-body-font:    var(--font-body);
+  --role-body-weight:  var(--weight-regular);
+
+  --role-label-font:   var(--font-body);
+  --role-label-weight: var(--weight-semibold);
+
+  --role-overline-font:    var(--font-body);
+  --role-overline-weight:  var(--weight-bold);
+  --role-overline-spacing: var(--tracking-overline);
+
+  --role-data-font: var(--font-mono);
+}
