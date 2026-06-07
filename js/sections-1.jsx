@@ -23,6 +23,8 @@
 
   /* ---- Nav ---- */
   function Nav({ theme, setTheme }) {
+    const { lang, toggleLang } = React.useContext(window.LangContext);
+    const T = window.I18n[lang].nav;
     const [scrolled, setScrolled] = React.useState(false);
     React.useEffect(() => {
       const f = () => setScrolled(window.scrollY > 8);
@@ -33,34 +35,38 @@
       h("div", { className: "container nav-inner" },
         h("a", { href: "#top", className: "nav-logo", "aria-label": "Gobilago home" }, h(Logo, { size: 28 })),
         h("nav", { className: "nav-links" },
-          h("a", { href: "#principle" }, "Method"),
-          h("a", { href: "#model" }, "Model"),
-          h("a", { href: "#types" }, "Studying"),
-          h("a", { href: "#features" }, "Features"),
-          h("a", { href: "#maker" }, "Story")),
+          h("a", { href: "#principle" }, T.method),
+          h("a", { href: "#model" }, T.model),
+          h("a", { href: "#types" }, T.studying),
+          h("a", { href: "#features" }, T.features),
+          h("a", { href: "#maker" }, T.story)),
         h("div", { className: "nav-actions" },
           h("button", { className: "nav-theme", "aria-label": "Toggle light / dark", onClick: (e) => setTheme(theme === "dark" ? "light" : "dark", e) },
             Ico(theme === "dark" ? "sun" : "moon")),
+          h("button", { className: "nav-theme", "aria-label": "Switch language", onClick: toggleLang,
+            style: { fontFamily: "var(--font-mono, monospace)", fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.05em" } },
+            window.I18n[lang].langToggle),
           h("span", { className: "nav-hide-sm" },
-            h(Button, { variant: "primary", size: "sm", icon: Ico("apple"), as: "a", href: "#get" }, "Get the app")))));
+            h(Button, { variant: "primary", size: "sm", icon: Ico("apple"), as: "a", href: "#get" }, T.getApp)))));
   }
   window.Nav = Nav;
 
   /* ---- Hero ---- */
   function Hero() {
+    const { lang } = React.useContext(window.LangContext);
+    const T = window.I18n[lang].hero;
     const { PhoneHome } = window;
     return h("section", { className: "section hero", id: "top", "data-screen-label": "Hero" },
       h("div", { className: "container hero-grid" },
         h("div", { className: "hero-copy" },
-          h(Tag, { className: "hero-tag" }, Ico("wifi-off"), "Offline-first \u00b7 iPhone & iPad"),
-          h("h1", { className: "hero-h1" }, "Recall,", h("br"), "not recognition."),
+          h(Tag, { className: "hero-tag" }, Ico("wifi-off"), T.tag),
+          h("h1", { className: "hero-h1" }, T.h1a, h("br"), T.h1b),
           h("p", { className: "hero-lead" },
-            "Most apps test whether you ", h("em", null, "recognise"),
-            " an answer. Gobilago makes you reproduce it \u2014 by typing, drawing, recalling from scratch \u2014 on a schedule that knows exactly what you're about to forget."),
+            T.lead1, h("em", null, T.leadEm), T.lead2),
           h("div", { className: "hero-cta" },
             h(window.AppStoreBadge, { href: "#get" }),
-            h(Button, { variant: "ghost", size: "lg", icon: Ico("play"), as: "a", href: "#types" }, "See how it works")),
-          h("div", { className: "hero-note" }, Ico("heart"), "Free to start \u00b7 Works fully offline \u00b7 No account required")),
+            h(Button, { variant: "ghost", size: "lg", icon: Ico("play"), as: "a", href: "#types" }, T.seeHow)),
+          h("div", { className: "hero-note" }, Ico("heart"), T.note)),
         h("div", { className: "hero-visual" },
           h("div", { className: "hero-glow gb-aurora" }),
           h(PhoneHome, null))));
@@ -69,45 +75,40 @@
 
   /* ---- Principle ---- */
   function PrincipleSection({ confetti }) {
+    const { lang } = React.useContext(window.LangContext);
+    const T = window.I18n[lang].principle;
     return h("section", { className: "section principle", "data-screen-label": "Principle" },
       confetti ? h("div", { className: "gb-confetti principle-bg" }) : null,
       h("div", { className: "container principle-inner" },
-        h(Eyebrow, { icon: "sparkles" }, "The principle"),
+        h(Eyebrow, { icon: "sparkles" }, T.eyebrow),
         h("h2", { className: "principle-statement" },
-          "Recognition feels like learning. ",
-          h("span", { className: "muted-strike" }, "It isn't."),
-          " Gobilago makes you ",
-          h("span", { className: "hl" }, "reproduce"),
-          " the answer \u2014 from scratch."),
+          T.s1,
+          h("span", { className: "muted-strike" }, T.sStrike),
+          T.s2,
+          h("span", { className: "hl" }, T.sHl),
+          T.s3),
         h("div", { className: "principle-cols" },
-          [["eye-off", "No peeking at the answer", "Seeing the right answer in a list is recognition. We keep it hidden until you've produced it yourself."],
-           ["pen-tool", "Produce, don't pick", "Type it. Draw it. The effort of reconstructing it is exactly what makes it stick."],
-           ["git-compare-arrows", "Graded for you, both ways", "Strong on kanji\u2192English but weak the other way? Each direction is tracked and scheduled on its own."]]
-            .map(([ic, t, d], i) => h("div", { className: "principle-col", key: i },
-              h("span", { className: "principle-ic" }, Ico(ic)),
-              h("h3", null, t), h("p", null, d))))));
+          T.cols.map(([ic, title, desc], i) => h("div", { className: "principle-col", key: i },
+            h("span", { className: "principle-ic" }, Ico(ic)),
+            h("h3", null, title), h("p", null, desc))))));
   }
   window.PrincipleSection = PrincipleSection;
 
   /* ---- Knowledge model ---- */
   function ModelSection() {
-    const items = [
-      ["Notion", "circle-dot", "A top-level packet of knowledge \u2014 e.g. the word \u201cto eat.\u201d It's the idea you actually want to own."],
-      ["Aspects", "scan-face", "The testable sides of a notion: the kanji, the reading, the meaning. Each one can be prompted or answered."],
-      ["Cards", "git-compare-arrows", "A directed link \u2014 prompt aspect \u2192 answer aspect. Each card is graded and scheduled independently."],
-      ["Clusters", "boxes", "When knowing one card implies another, they share a single schedule \u2014 so you never grind redundant reps."],
-    ];
+    const { lang } = React.useContext(window.LangContext);
+    const T = window.I18n[lang].model;
     return h("section", { className: "section section--sunk", "data-screen-label": "Model" },
       h("div", { className: "container" },
         h("div", { className: "section-head" },
-          h(Eyebrow, { icon: "network" }, "The model"),
-          h("h2", null, "A knowledge graph, not a stack of cards"),
-          h("p", { className: "lead" }, "Flat flashcards flatten meaning. Gobilago keeps the structure of what you're learning intact, so the scheduler knows precisely which connection is weak \u2014 and which you can leave alone.")),
+          h(Eyebrow, { icon: "network" }, T.eyebrow),
+          h("h2", null, T.h2),
+          h("p", { className: "lead" }, T.lead)),
         h("div", { className: "graph-grid" },
-          items.map(([t, ic, d], i) => h(Card, { key: i, pad: "lg", className: "graph-card" },
+          T.items.map(([title, ic, desc], i) => h(Card, { key: i, pad: "lg", className: "graph-card" },
             h("span", { className: "graph-ic" }, Ico(ic)),
             h("div", { className: "graph-step gb-mono" }, "0" + (i + 1)),
-            h("h3", null, t), h("p", null, d))))));
+            h("h3", null, title), h("p", null, desc))))));
   }
   window.ModelSection = ModelSection;
 })();

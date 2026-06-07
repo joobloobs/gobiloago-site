@@ -1,0 +1,228 @@
+/* Gobilago.com — i18n strings (en / fr) + LangContext. */
+(function () {
+  const React = window.React;
+
+  window.LangContext = React.createContext({ lang: "en", toggleLang: () => {} });
+
+  window.I18n = {
+    en: {
+      langToggle: "FR",
+      nav: {
+        method: "Method", model: "Model", studying: "Studying",
+        features: "Features", story: "Story", getApp: "Get the app",
+      },
+      hero: {
+        tag: "Offline-first · iPhone & iPad",
+        h1a: "Recall,", h1b: "not recognition.",
+        lead1: "Most apps test whether you ", leadEm: "recognise",
+        lead2: " an answer. Gobilago makes you reproduce it — by typing, drawing, recalling from scratch — on a schedule that knows exactly what you’re about to forget.",
+        seeHow: "See how it works",
+        note: "Free to start · Works fully offline · No account required",
+      },
+      principle: {
+        eyebrow: "The principle",
+        s1: "Recognition feels like learning. ", sStrike: "It isn’t.",
+        s2: " Gobilago makes you ", sHl: "reproduce", s3: " the answer — from scratch.",
+        cols: [
+          ["eye-off", "No peeking at the answer", "Seeing the right answer in a list is recognition. We keep it hidden until you’ve produced it yourself."],
+          ["pen-tool", "Produce, don’t pick", "Type it. Draw it. The effort of reconstructing it is exactly what makes it stick."],
+          ["git-compare-arrows", "Graded for you, both ways", "Strong on kanji→English but weak the other way? Each direction is tracked and scheduled on its own."],
+        ],
+      },
+      model: {
+        eyebrow: "The model",
+        h2: "A knowledge graph, not a stack of cards",
+        lead: "Flat flashcards flatten meaning. Gobilago keeps the structure of what you’re learning intact, so the scheduler knows precisely which connection is weak — and which you can leave alone.",
+        items: [
+          ["Notion", "circle-dot", "A top-level packet of knowledge — e.g. the word “to eat.” It’s the idea you actually want to own."],
+          ["Aspects", "scan-face", "The testable sides of a notion: the kanji, the reading, the meaning. Each one can be prompted or answered."],
+          ["Cards", "git-compare-arrows", "A directed link — prompt aspect → answer aspect. Each card is graded and scheduled independently."],
+          ["Clusters", "boxes", "When knowing one card implies another, they share a single schedule — so you never grind redundant reps."],
+        ],
+      },
+      interactions: {
+        eyebrow: "How you study",
+        h2: "Three ways to prove you actually know it",
+        lead: "Every aspect picks the interaction that genuinely tests recall — then Gobilago grades it automatically, removing the bias to mark yourself right. Tap to preview.",
+        types: [
+          ["Display", "eye", "Read-only context", "A static prompt that frames the test — a sentence, an image, a reading. It sets the scene but is never scored on its own.", "context"],
+          ["Type", "text-cursor-input", "Reproduce by keyboard", "Type the missing piece and Gobilago checks it for you, character by character. No “I knew that” self-grading — you either produced it or you didn’t.", "language"],
+          ["Draw", "pen-tool", "Reconstruct by hand", "Redraw a symbol or diagram stroke-by-stroke on a Skia-powered canvas. Perfect for kanji, kana, signatures, and anything your fingers need to remember.", "language"],
+        ],
+        fillBlank: "Fill the blank", findKana: "Find the kana", context: "Context",
+        autoGraded: "Auto-graded · correct", strokeOrder: "Stroke order recognised",
+      },
+      scheduler: {
+        eyebrow: "The scheduler",
+        h2: "It knows what you’re about to forget",
+        lead: "Knowledge moves through two phases, automatically:",
+        phase1h: "Training", phase1p: "Rapid, high-frequency reps until you recall it three times in a row. New knowledge sprints here first.",
+        phase2h: "Retention", phase2p: "SM-2-inspired intervals that stretch as you succeed. Miss one and it resets — honesty over streaks.",
+        offline: "Fully offline. Sync never blocks the UI.",
+        cardHead: "Long Term Memory",
+        rows: [
+          ["overdue", "a", "hiragana", "1 day overdue"],
+          ["upcoming", "manger", "french verbs", "in 1 day"],
+          ["dormant", "comer", "espagnol", "in 3 days"],
+          ["upcoming", "食べる", "japonais", "in 5 days"],
+        ],
+      },
+      features: {
+        eyebrow: "Built in",
+        h2: "Everything a serious learner actually needs",
+        lead: "No noise, no nagging. Just the tools that make building and keeping knowledge feel effortless.",
+        items: [
+          ["layout-template", "var(--atom-indigo)", "Collections & templates", "Reusable notion structures — built-in, your own, or from the community. Spin up a new deck in seconds.", "Built-in"],
+          ["replace-all", "var(--atom-teal)", "Field operations", "Bulk-transform a whole collection at once: find & replace, change case, add affixes, clear fields.", null],
+          ["library-big", "var(--atom-violet)", "Community library", "Publish, download and share collections. Versioned snapshots mean an author’s update never breaks your copy.", null],
+          ["wifi-off", "var(--atom-green)", "Offline-first", "Everything works with zero signal. Your graph syncs quietly in the background the moment you’re back online.", null],
+          ["copy-plus", "var(--atom-blue)", "Derived templates", "Tweak a template as you create and Gobilago auto-saves a deduplicated hidden variant — no clutter.", null],
+          ["lock", "var(--atom-amber)", "Yours, privately", "A single-device lock keeps your data consistent. No account required to start, ever.", null],
+        ],
+      },
+      roadmap: {
+        eyebrow: "On the way",
+        h2: "What’s coming next",
+        lead: "Gobilago is built in the open. Here’s a peek at what’s on the bench — shaped, in part, by what you ask for.",
+        items: [
+          ["graduation-cap", "Exam & Intensive modes", "Focused cram sessions and timed exams for the night before."],
+          ["sparkles", "AI collection generation", "Turn a prompt or a PDF into a ready-to-study collection."],
+          ["arrow-left-right", "Anki & Quizlet import", "Bring your existing decks across without losing your history."],
+          ["users", "Collaborative decks", "Build and maintain collections together with classmates."],
+          ["flame", "Daily streaks & widget", "A gentle home-screen nudge to keep your memories fresh."],
+        ],
+      },
+      maker: {
+        eyebrow: "From the maker",
+        q1: "“I kept ", qHl1: "recognising",
+        q2: " words in my flashcard app and feeling like I knew them — then drawing a complete blank when I needed them. So I built the app I wished existed: one that makes you ",
+        qHl2: "produce",
+        q3: " the answer, and is honest with you when you can’t yet.”",
+        name: "The Gobilago maker", role: "Solo developer · building in the open",
+      },
+      cta: {
+        h2: "Start remembering things for real.",
+        sub: "Free to start, works fully offline, no account required. Build your first collection in a couple of minutes.",
+        ios: "Requires iOS 17+",
+      },
+      footer: {
+        brand: "Recall, not recognition. An offline-first spaced-repetition app for people who want to actually keep what they learn.",
+        product: "Product", company: "Company", legal: "Legal",
+        productLinks: [["Method", "#principle"], ["The model", "#model"], ["Studying", "#types"], ["Features", "#features"]],
+        companyLinks: [["Story", "#maker"], ["Roadmap", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
+        legalLinks: [["Terms of Use", "terms.html"], ["Privacy Policy", "privacy.html"]],
+        made: "Made with care · iOS only · Works offline",
+      },
+    },
+
+    fr: {
+      langToggle: "EN",
+      nav: {
+        method: "Méthode", model: "Modèle", studying: "Apprendre",
+        features: "Fonctionnalités", story: "Histoire", getApp: "Obtenir l’app",
+      },
+      hero: {
+        tag: "Sans connexion · iPhone & iPad",
+        h1a: "Mémoriser,", h1b: "pas reconnaître.",
+        lead1: "La plupart des applications vérifient si vous ", leadEm: "reconnaissez",
+        lead2: " une réponse. Gobilago vous oblige à la reproduire — en tapant, en dessinant, en vous souvenant de zéro — selon un calendrier qui sait exactement ce que vous êtes sur le point d’oublier.",
+        seeHow: "Voir comment ça marche",
+        note: "Gratuit pour débuter · Fonctionne hors ligne · Aucun compte requis",
+      },
+      principle: {
+        eyebrow: "Le principe",
+        s1: "Reconnaître donne l’impression d’apprendre. ", sStrike: "Ce n’est pas le cas.",
+        s2: " Gobilago vous oblige à ", sHl: "reproduire", s3: " la réponse — de mémoire.",
+        cols: [
+          ["eye-off", "Pas de réponse visible", "Voir la bonne réponse dans une liste, c’est de la reconnaissance. Nous la gardons cachée jusqu’à ce que vous l’ayez produite vous-même."],
+          ["pen-tool", "Produire, pas choisir", "Tapez-la. Dessinez-la. L’effort de la reconstruire est précisément ce qui la fait tenir."],
+          ["git-compare-arrows", "Noté automatiquement, dans les deux sens", "Fort en kanji→anglais mais faible dans l’autre sens ? Chaque direction est suivie et planifiée indépendamment."],
+        ],
+      },
+      model: {
+        eyebrow: "Le modèle",
+        h2: "Un graphe de connaissances, pas un tas de cartes",
+        lead: "Les fiches plates aplatissent le sens. Gobilago préserve la structure de ce que vous apprenez, afin que le planificateur sache précisément quelle connexion est faible — et laquelle peut être laissée tranquille.",
+        items: [
+          ["Notion", "circle-dot", "Un paquet de connaissance de premier niveau — ex. le mot « manger ». C’est l’idée que vous voulez vraiment maîtriser."],
+          ["Aspects", "scan-face", "Les facettes testables d’une notion : le kanji, la lecture, le sens. Chacune peut être une question ou une réponse."],
+          ["Cartes", "git-compare-arrows", "Un lien dirigé — aspect question → aspect réponse. Chaque carte est notée et planifiée indépendamment."],
+          ["Clusters", "boxes", "Quand connaître une carte en implique une autre, elles partagent le même calendrier — pour ne jamais répéter l’inutile."],
+        ],
+      },
+      interactions: {
+        eyebrow: "Comment vous étudiez",
+        h2: "Trois façons de prouver que vous savez vraiment",
+        lead: "Chaque aspect choisit l’interaction qui teste vraiment la mémoire — puis Gobilago la note automatiquement, supprimant le biais de vous noter vous-même. Appuyez pour prévisualiser.",
+        types: [
+          ["Affichage", "eye", "Contexte en lecture seule", "Un prompt statique qui encadre le test — une phrase, une image, une lecture. Il pose le décor mais n’est jamais noté seul.", "contexte"],
+          ["Écrire", "text-cursor-input", "Reproduire au clavier", "Tapez la pièce manquante et Gobilago la vérifie pour vous, caractère par caractère. Pas d’auto-évaluation « je le savais » — vous l’avez produite ou non.", "langue"],
+          ["Dessiner", "pen-tool", "Reconstruire à la main", "Retracez un symbole ou un diagramme trait par trait sur un canevas Skia. Parfait pour les kanji, kana, signatures et tout ce que vos doigts doivent mémoriser.", "langue"],
+        ],
+        fillBlank: "Complétez la phrase", findKana: "Trouvez le kana", context: "Contexte",
+        autoGraded: "Noté automatiquement · correct", strokeOrder: "Ordre des traits reconnu",
+      },
+      scheduler: {
+        eyebrow: "Le planificateur",
+        h2: "Il sait ce que vous êtes sur le point d’oublier",
+        lead: "Les connaissances traversent deux phases, automatiquement :",
+        phase1h: "Entraînement", phase1p: "Répétitions rapides et fréquentes jusqu’à ce que vous vous en souveniez trois fois de suite. Les nouvelles connaissances commencent ici.",
+        phase2h: "Rétention", phase2p: "Des intervalles inspirés de SM-2 qui s’allongent à mesure que vous réussissez. Ratez-en un et ça repart de zéro — l’honnîteté avant tout.",
+        offline: "Entièrement hors ligne. La synchronisation ne bloque jamais l’interface.",
+        cardHead: "Mémoire à long terme",
+        rows: [
+          ["overdue", "a", "hiragana", "1 jour de retard"],
+          ["upcoming", "manger", "verbes français", "dans 1 jour"],
+          ["dormant", "comer", "espagnol", "dans 3 jours"],
+          ["upcoming", "食べる", "japonais", "dans 5 jours"],
+        ],
+      },
+      features: {
+        eyebrow: "Inclus",
+        h2: "Tout ce dont un apprenant sérieux a vraiment besoin",
+        lead: "Pas de bruit, pas de harcèlement. Juste les outils qui rendent la construction et la rétention des connaissances naturelles.",
+        items: [
+          ["layout-template", "var(--atom-indigo)", "Collections et modèles", "Des structures de notions réutilisables — intégrées, les vôtres ou de la communauté. Créez un nouveau deck en quelques secondes.", "Intégré"],
+          ["replace-all", "var(--atom-teal)", "Opérations sur les champs", "Transformez toute une collection en masse : rechercher & remplacer, changer la casse, ajouter des affixes, vider des champs.", null],
+          ["library-big", "var(--atom-violet)", "Bibliothèque communautaire", "Publiez, téléchargez et partagez des collections. Les instantanés versionnés garantissent que la mise à jour d’un auteur ne casse jamais votre copie.", null],
+          ["wifi-off", "var(--atom-green)", "Hors ligne en priorité", "Tout fonctionne sans signal. Votre graphe se synchronise discrètement en arrière-plan dès que vous êtes en ligne.", null],
+          ["copy-plus", "var(--atom-blue)", "Modèles dérivés", "Personnalisez un modèle lors de la création et Gobilago sauvegarde automatiquement une variante cachée dédupliquée — sans encombrement.", null],
+          ["lock", "var(--atom-amber)", "À vous, en privé", "Un verrou mono-appareil garde vos données cohérentes. Aucun compte requis pour commencer, jamais.", null],
+        ],
+      },
+      roadmap: {
+        eyebrow: "À venir",
+        h2: "Ce qui arrive prochainement",
+        lead: "Gobilago est développé en open source. Voici un aperçu de ce qui est en cours — façonné, en partie, par vos demandes.",
+        items: [
+          ["graduation-cap", "Modes Examen et Intensif", "Sessions de révision ciblées et examens chronométrés pour la veille."],
+          ["sparkles", "Génération de collections par IA", "Transformez un prompt ou un PDF en collection prête à étudier."],
+          ["arrow-left-right", "Import Anki & Quizlet", "Importez vos decks existants sans perdre votre historique."],
+          ["users", "Decks collaboratifs", "Construisez et maintenez des collections avec vos camarades."],
+          ["flame", "Séries quotidiennes et widget", "Un rappel discret sur l’écran d’accueil pour garder vos souvenirs frais."],
+        ],
+      },
+      maker: {
+        eyebrow: "Du créateur",
+        q1: "“Je continuais à ", qHl1: "reconnaître",
+        q2: " des mots dans mon application de fiches et à penser que je les connaissais — puis je faisais un blanc total quand j’en avais besoin. J’ai donc construit l’application que j’aurais aimé avoir : celle qui vous oblige à ",
+        qHl2: "produire",
+        q3: " la réponse, et qui est honnête avec vous quand vous n’en êtes pas encore capable.”",
+        name: "Le créateur de Gobilago", role: "Développeur solo · en développement ouvert",
+      },
+      cta: {
+        h2: "Commencez à vraiment mémoriser.",
+        sub: "Gratuit pour débuter, fonctionne hors ligne, aucun compte requis. Créez votre première collection en quelques minutes.",
+        ios: "Nécessite iOS 17+",
+      },
+      footer: {
+        brand: "Mémoriser, pas reconnaître. Une application de répétition espacée hors ligne pour ceux qui veulent vraiment retenir ce qu’ils apprennent.",
+        product: "Produit", company: "Entreprise", legal: "Légal",
+        productLinks: [["Méthode", "#principle"], ["Le modèle", "#model"], ["Apprendre", "#types"], ["Fonctionnalités", "#features"]],
+        companyLinks: [["Histoire", "#maker"], ["Feuille de route", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
+        legalLinks: [["Conditions d’utilisation", "terms.html"], ["Politique de confidentialité", "privacy.html"]],
+        made: "Fait avec soin · iOS uniquement · Fonctionne hors ligne",
+      },
+    },
+  };
+})();

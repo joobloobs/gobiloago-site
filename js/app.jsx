@@ -37,6 +37,18 @@
     const { useTweaks, TweaksPanel, TweakSection, TweakToggle, TweakRadio, TweakColor } = window;
     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
+    // Language: auto-detect from browser locale, persisted in localStorage.
+    const [lang, setLangState] = useState(() => {
+      const stored = localStorage.getItem("gb-lang");
+      if (stored === "en" || stored === "fr") return stored;
+      return navigator.language.startsWith("fr") ? "fr" : "en";
+    });
+    const toggleLang = () => {
+      const next = lang === "en" ? "fr" : "en";
+      localStorage.setItem("gb-lang", next);
+      setLangState(next);
+    };
+
     // Theme toggle (nav button + tweak) with a circular reveal that
     // expands from the click origin via the View Transitions API.
     const setTheme = (mode, ev) => {
@@ -86,7 +98,7 @@
 
     const wrap = (node, i) => h("div", { className: "reveal", key: i }, node);
 
-    return h(React.Fragment, null,
+    return h(window.LangContext.Provider, { value: { lang, toggleLang } },
       h(Nav, { theme, setTheme }),
       h("main", { id: "content" },
         h(Hero, null),
