@@ -113,6 +113,15 @@
         legalLinks: [["Terms of Use", "terms.html"], ["Privacy Policy", "privacy.html"]],
         made: "Made with care · iOS only · Works offline",
       },
+      phone: {
+        count1: "1 of 2", count2: "2 of 2",
+        typeSpanish: "Type the Spanish", findKana: "Find the kana",
+        prompt1: "eat", submit: "Submit", dontKnow: "I don’t know",
+        closeMatch: "Close match", correctAnswer: "Correct answer", yourAnswer: "Your answer",
+        strokeOk: "Stroke order recognised",
+        howWell: "How well did you remember?",
+        again: "Again", hard: "Hard", easy: "Easy", continue: "Continue",
+      },
     },
 
     fr: {
@@ -222,6 +231,15 @@
         companyLinks: [["Histoire", "#maker"], ["Feuille de route", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
         legalLinks: [["Conditions d’utilisation", "terms.html"], ["Politique de confidentialité", "privacy.html"]],
         made: "Fait avec soin · iOS uniquement · Fonctionne hors ligne",
+      },
+      phone: {
+        count1: "1 sur 2", count2: "2 sur 2",
+        typeSpanish: "Tapez l’espagnol", findKana: "Trouvez le kana",
+        prompt1: "manger", submit: "Valider", dontKnow: "Je ne sais pas",
+        closeMatch: "Presque", correctAnswer: "Bonne réponse", yourAnswer: "Votre réponse",
+        strokeOk: "Ordre des traits reconnu",
+        howWell: "Vous en souvenez-vous bien ?",
+        again: "Revoir", hard: "Difficile", easy: "Facile", continue: "Continuer",
       },
     },
   };

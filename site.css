@@ -170,6 +170,62 @@ h3{ font-size:var(--text-lg); }
 .ph-tab svg{ width:19px; height:19px; }
 .ph-tab.is-active{ background:var(--color-primary-soft); color:var(--color-primary); }
 
+/* ---- Phone study flow (Type / Draw cards) ---- */
+.ph-study{ flex:1; display:flex; flex-direction:column; min-height:0; }
+.ps-head{ display:flex; align-items:center; gap:10px; padding:4px 18px 10px; }
+.ps-x{ width:34px; height:34px; flex:none; border-radius:50%; background:var(--surface-sunk); display:grid; place-items:center; color:var(--text-strong); }
+.ps-x svg{ width:17px; height:17px; }
+.ps-count{ flex:1; text-align:center; font-family:var(--font-display); font-weight:800; font-size:16px; color:var(--text-strong); }
+.ps-progress{ height:3px; background:var(--surface-sunk); margin:0 18px; border-radius:2px; overflow:hidden; }
+.ps-progress-bar{ height:100%; background:var(--color-primary); border-radius:2px; transition:width .6s var(--ease-out); }
+
+.ps-card{ flex:1; margin:14px 16px 16px; background:var(--surface-card); border:1px solid var(--line); border-radius:24px;
+  box-shadow:var(--shadow-sm); padding:20px 16px; display:flex; flex-direction:column; align-items:stretch; }
+.ps-badge{ align-self:center; font-family:var(--font-mono); font-size:9.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--color-primary); background:var(--color-primary-soft); padding:4px 11px; border-radius:var(--radius-pill); }
+.ps-badge--amber{ color:var(--atom-amber); background:color-mix(in srgb, var(--atom-amber) 15%, transparent); }
+.ps-prompt{ text-align:center; font-family:var(--font-display); font-weight:800; letter-spacing:-.02em; font-size:32px; color:var(--text-strong); margin:14px 0; }
+.ps-prompt--lg{ font-size:40px; margin:10px 0 4px; }
+.ps-divider{ height:1px; background:var(--line); margin:2px 4px 16px; }
+
+.ps-input-wrap{ margin-top:auto; }
+.ps-input{ display:flex; align-items:center; gap:1px; min-height:48px; padding:0 16px; border-radius:var(--radius-md);
+  background:var(--surface-input, var(--surface-sunk)); border:1.5px solid var(--color-primary); font-size:20px; font-weight:600; color:var(--text-strong); }
+.ps-caret{ display:inline-block; width:2px; height:22px; background:var(--color-primary); animation:ps-blink 1s steps(1) infinite; }
+.ps-submit{ margin-top:12px; text-align:center; background:var(--color-primary); color:#fff; font-weight:700; font-size:15px;
+  padding:13px; border-radius:var(--radius-md); }
+.ps-dontknow{ text-align:center; color:var(--text-muted); font-weight:600; font-size:15px; padding:13px; border-radius:var(--radius-md); background:var(--surface-sunk); }
+
+.ps-canvas{ position:relative; flex:1; min-height:150px; margin:8px 0 4px; border-radius:18px; background:var(--surface-sunk);
+  display:grid; place-items:center; }
+.ps-canvas-tools{ position:absolute; left:14px; right:14px; bottom:12px; display:flex; justify-content:space-between; color:var(--text-muted); }
+.ps-canvas-tools svg{ width:20px; height:20px; } .ps-trash{ color:var(--atom-red); }
+.ps-stroke-ok{ display:flex; align-items:center; justify-content:center; gap:7px; color:var(--atom-green);
+  font-weight:600; font-size:13px; margin:10px 0 2px; }
+.ps-stroke-ok svg{ width:16px; height:16px; }
+
+.ps-reveal{ display:flex; flex-direction:column; align-items:center; gap:5px; margin-top:6px; }
+.ps-rev-label{ font-family:var(--font-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-top:10px; }
+.ps-rev-answer{ font-family:var(--font-display); font-weight:800; font-size:24px; color:var(--text-strong); }
+.ps-rev-yours{ font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--atom-amber); text-decoration:line-through; }
+
+.ps-howwell{ text-align:center; color:var(--text-muted); font-size:12.5px; margin:14px 0 9px; }
+.ps-grades{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+.ps-grade{ display:flex; flex-direction:column; align-items:center; gap:4px; padding:11px 4px; border-radius:var(--radius-md);
+  border:1.5px solid var(--line); color:var(--text-muted); font-size:11px; font-weight:600; }
+.ps-grade-ic svg{ width:18px; height:18px; }
+.ps-grade--hard.is-on{ border-color:var(--atom-amber); color:var(--atom-amber); background:color-mix(in srgb, var(--atom-amber) 10%, transparent); }
+.ps-grade--easy.is-on{ border-color:var(--atom-green); color:var(--atom-green); background:color-mix(in srgb, var(--atom-green) 10%, transparent); }
+.ps-continue{ display:flex; align-items:center; justify-content:center; gap:8px; margin-top:12px; flex-direction:row-reverse;
+  background:var(--color-primary); color:#fff; font-weight:700; font-size:15px; padding:13px; border-radius:var(--radius-pill); }
+.ps-continue svg{ width:17px; height:17px; }
+
+@keyframes ps-blink{ 0%,50%{ opacity:1; } 51%,100%{ opacity:0; } }
+@keyframes ps-stroke{ from{ stroke-dashoffset:280; } to{ stroke-dashoffset:0; } }
+@media (prefers-reduced-motion: reduce){
+  .ps-caret{ animation:none; } .ps-canvas svg path{ animation:none !important; stroke-dashoffset:0 !important; }
+}
+
 /* ============================================================
    Principle
    ============================================================ */

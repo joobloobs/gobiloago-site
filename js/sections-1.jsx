@@ -55,7 +55,7 @@
   function Hero() {
     const { lang } = React.useContext(window.LangContext);
     const T = window.I18n[lang].hero;
-    const { PhoneHome } = window;
+    const { PhoneStudy } = window;
     return h("section", { className: "section hero", id: "top", "data-screen-label": "Hero" },
       h("div", { className: "container hero-grid" },
         h("div", { className: "hero-copy" },
@@ -69,7 +69,7 @@
           h("div", { className: "hero-note" }, Ico("heart"), T.note)),
         h("div", { className: "hero-visual" },
           h("div", { className: "hero-glow gb-aurora" }),
-          h(PhoneHome, null))));
+          h(PhoneStudy, null))));
   }
   window.Hero = Hero;
 
