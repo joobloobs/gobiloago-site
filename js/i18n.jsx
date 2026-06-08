@@ -9,7 +9,7 @@
       langToggle: "FR",
       nav: {
         method: "Method", model: "Model", studying: "Studying",
-        features: "Features", story: "Story", getApp: "Get the app",
+        features: "Features", getApp: "Get the app",
       },
       hero: {
         tag: "Smarter flashcards · iPhone & iPad",
@@ -113,14 +113,6 @@
           ["flame", "Daily streaks & widget", "A gentle home-screen nudge to keep your memories fresh."],
         ],
       },
-      maker: {
-        eyebrow: "From the maker",
-        q1: "“I kept ", qHl1: "recognising",
-        q2: " words in my flashcard app and feeling like I knew them — then drawing a complete blank when I needed them. So I built the app I wished existed: one that makes you ",
-        qHl2: "produce",
-        q3: " the answer, and is honest with you when you can’t yet.”",
-        name: "The Gobilago maker", role: "Solo developer · building in the open",
-      },
       cta: {
         h2: "Start remembering things for real.",
         sub: "Free to start, works fully offline, no account required. Build your first collection in a couple of minutes.",
@@ -130,7 +122,7 @@
         brand: "Recall, not recognition. An offline-first spaced-repetition app for people who want to actually keep what they learn.",
         product: "Product", company: "Company", legal: "Legal",
         productLinks: [["Method", "#principle"], ["The model", "#model"], ["Studying", "#types"], ["Features", "#features"]],
-        companyLinks: [["Story", "#maker"], ["Roadmap", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
+        companyLinks: [["Roadmap", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
         legalLinks: [["Terms of Use", "terms.html"], ["Privacy Policy", "privacy.html"]],
         made: "Made with care · iOS only · Works offline",
       },
@@ -149,7 +141,7 @@
       langToggle: "EN",
       nav: {
         method: "Méthode", model: "Modèle", studying: "Apprendre",
-        features: "Fonctionnalités", story: "Histoire", getApp: "Obtenir l’app",
+        features: "Fonctionnalités", getApp: "Obtenir l’app",
       },
       hero: {
         tag: "Fiches intelligentes · iPhone & iPad",
@@ -253,14 +245,6 @@
           ["flame", "Séries quotidiennes et widget", "Un rappel discret sur l’écran d’accueil pour garder vos souvenirs frais."],
         ],
       },
-      maker: {
-        eyebrow: "Du créateur",
-        q1: "“Je continuais à ", qHl1: "reconnaître",
-        q2: " des mots dans mon application de fiches et à penser que je les connaissais — puis je faisais un blanc total quand j’en avais besoin. J’ai donc construit l’application que j’aurais aimé avoir : celle qui vous oblige à ",
-        qHl2: "produire",
-        q3: " la réponse, et qui est honnête avec vous quand vous n’en êtes pas encore capable.”",
-        name: "Le créateur de Gobilago", role: "Développeur solo · en développement ouvert",
-      },
       cta: {
         h2: "Commencez à vraiment mémoriser.",
         sub: "Gratuit pour débuter, fonctionne hors ligne, aucun compte requis. Créez votre première collection en quelques minutes.",
@@ -270,7 +254,7 @@
         brand: "Mémoriser, pas reconnaître. Une application de répétition espacée hors ligne pour ceux qui veulent vraiment retenir ce qu’ils apprennent.",
         product: "Produit", company: "Entreprise", legal: "Légal",
         productLinks: [["Méthode", "#principle"], ["Le modèle", "#model"], ["Apprendre", "#types"], ["Fonctionnalités", "#features"]],
-        companyLinks: [["Histoire", "#maker"], ["Feuille de route", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
+        companyLinks: [["Feuille de route", "#roadmap"], ["Contact", "mailto:hello@gobilago.com"]],
         legalLinks: [["Conditions d’utilisation", "terms.html"], ["Politique de confidentialité", "privacy.html"]],
         made: "Fait avec soin · iOS uniquement · Fonctionne hors ligne",
       },

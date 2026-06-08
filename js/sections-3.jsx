@@ -9,28 +9,6 @@
     return h("span", { className: "eyebrow" + (className ? " " + className : "") }, icon ? Ico(icon) : null, children);
   }
 
-  /* ---- Maker note ---- */
-  function MakerSection({ confetti }) {
-    const { lang } = React.useContext(window.LangContext);
-    const T = window.I18n[lang].maker;
-    return h("section", { className: "section maker", id: "maker", "data-screen-label": "Story" },
-      h("div", { className: "container" },
-        h(Card, { pad: "lg", className: "maker-card" },
-          confetti ? h("div", { className: "gb-confetti maker-confetti" }) : null,
-          h("div", { className: "maker-inner" },
-            h(Eyebrow, { icon: "sprout", className: "maker-eyebrow" }, T.eyebrow),
-            h("p", { className: "maker-quote" },
-              T.q1, h("span", { className: "hl" }, T.qHl1),
-              T.q2, h("span", { className: "hl" }, T.qHl2),
-              T.q3),
-            h("div", { className: "maker-sign" },
-              h("span", { className: "maker-avatar gb-aurora" }, "G"),
-              h("div", { style: { textAlign: "left" } },
-                h("div", { className: "maker-name" }, T.name),
-                h("div", { className: "maker-role" }, T.role)))))));
-  }
-  window.MakerSection = MakerSection;
-
   /* ---- Roadmap ---- */
   function RoadmapSection() {
     const { lang } = React.useContext(window.LangContext);

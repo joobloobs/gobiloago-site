@@ -94,7 +94,7 @@
 
     const theme = t.dark ? "dark" : "light";
     const { Nav, Hero, IntroSection, PrincipleSection, ModelSection, InteractionsSection, SchedulerSection,
-      FeaturesSection, MakerSection, RoadmapSection, CTASection, Footer } = window;
+      FeaturesSection, RoadmapSection, CTASection, Footer } = window;
 
     const wrap = (node, i) => h("div", { className: "reveal", key: i }, node);
 
@@ -109,7 +109,6 @@
         wrap(h(SchedulerSection, null), "sc"),
         h("div", { id: "features" }, wrap(h(FeaturesSection, null), "fe")),
         wrap(h(RoadmapSection, null), "rm"),
-        wrap(h(MakerSection, { confetti: t.confetti }), "mk"),
         wrap(h(CTASection, null), "ct")),
       h(Footer, null),
       h(TweaksPanel, { title: "Tweaks" },
